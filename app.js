@@ -74,6 +74,13 @@ app.use('/js', express.static(bootstrapJs));
 const jqueryJs = path.join(__dirname, 'node_modules', 'jquery', 'dist');
 app.use('/js', express.static(jqueryJs));
 
+const bootStrapFonts = path.join(
+  __dirname,
+  'node_modules',
+  'bootstrap',
+  'fonts',
+);
+app.use('/fonts', express.static(bootStrapFonts));
 const views = path.join(__dirname, 'src', 'views');
 app.set('views', views);
 
