@@ -1,5 +1,5 @@
 const express = require('express');
-const { MongoClient, ObjectID } = require('mongodb');
+const { MongoClient } = require('mongodb');
 const debug = require('debug')('app:authRoutes');
 const passport = require('passport');
 const { config } = require('../config/data/mongodb');

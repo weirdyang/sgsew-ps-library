@@ -5,7 +5,6 @@ const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
-const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 // const sql = require('mssql');
@@ -21,10 +20,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // const config = {
-//   user: 'library',
-//   password: 'P@ssw0rd!',
-//   server: 'sguspslibrary.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
-//   database: 'PSLibrary',
+//   user: '<user>',
+//   password: '<password>',
+//   server: '<server>', // You can use 'localhost\\instance' to connect to named instance
+//   database: '<database>',
 //   options: {
 //     encrypt: true,
 //   },
@@ -36,8 +35,8 @@ const port = process.env.PORT || 3000;
 
 // middleware
 app.use(morgan('combined'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({ secret: 'library' }));
 
